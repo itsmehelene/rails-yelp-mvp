@@ -1,0 +1,28 @@
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+<p>
+  <strong>Phone Number:</strong>
+  <%= @restaurant.phone_number %>
+</p>
+
+
+<p>
+  <strong>Review:</strong>
+  <% @restaurant.reviews.each do |review| %>
+  <p><%=review.content%></p>
+  <p><%=review.rating%></p>
+<% end %>
+</p>
+
+<p>
+<%= link_to "Go back", restaurants_path, class: "btn btn-light"%>
+<%= link_to "Add Review", new_restaurant_review_path(@restaurant), class: "btn btn-light"%>
+</p>
